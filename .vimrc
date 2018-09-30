@@ -32,7 +32,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'junegunn/vim-easy-align'
 
 " Javascript
-Plug "https://github.com/pangloss/vim-javascript"
+Plug 'https://github.com/pangloss/vim-javascript'
 
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
