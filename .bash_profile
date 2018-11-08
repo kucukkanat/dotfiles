@@ -7,6 +7,7 @@ alias tree2="tree -L 2 -I 'node_modules' "
 
 # VSCode
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Users/hsahin/.npm-packages/bin/"
 
 # Prompt : https://github.com/kucukkanat/ezprompt
 function parse_git_branch() {
