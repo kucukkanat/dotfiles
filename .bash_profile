@@ -1,7 +1,6 @@
 # GIT Autocompletion
 # https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
 
-alias ls='ls -G'
 alias tree1="tree -L 1"
 alias tree2="tree -L 2 -I 'node_modules' "
 
@@ -55,5 +54,5 @@ function parse_git_dirty {
 		echo ""
 	fi
 }
-
-export PS1="\A \w \`parse_git_branch\` "
+# https://misc.flogisoft.com/bash/tip_colors_and_formatting
+export PS1="\A \w \e[96m $(parse_git_branch) \e[0m"
