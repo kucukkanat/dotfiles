@@ -55,4 +55,4 @@ function parse_git_dirty {
 	fi
 }
 # https://misc.flogisoft.com/bash/tip_colors_and_formatting
-export PS1="\A \w \e[96m $(parse_git_branch) \e[0m"
+export PS1='\A \w \e[34m$(parse_git_branch) \e[0m'
