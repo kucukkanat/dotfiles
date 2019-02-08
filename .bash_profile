@@ -3,6 +3,8 @@
 # .bash_profile
 # ----------------------------
 
+alias dotfiles_update="git clone https://github.com/kucukkanat/dotfiles ~/dot && cp -a ~/dot/. ~/ && rm -rf ~/dot && source ~/.bash_profile"
+
 # User binaries
 if [ -d ~/bin ]; then
     # add your bin folder to the path, if you have it.
