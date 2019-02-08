@@ -5,6 +5,11 @@
 Run 
 
 ```
-    git clone https://github.com/kucukkanat/dotfiles ~/dot && cp -a ~/dot ~/ && rm -rf ~/dot
+source .profile
 ```
 
+_Tools I use :_
+
+- https://github.com/junegunn/fzf#installation
+- https://github.com/dylanaraps/fff
+- 

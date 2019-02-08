@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+install_vim_plug() {
+    echo "Installing vim-plug : "
+    
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+}
+
+install_vim_plug
+
 install_linuxbrew() {
     if hash brew 2>/dev/null; then
         echo "Linux Brew already exists"
@@ -56,3 +65,16 @@ else
         # Unknown.
         echo "Can not install fzf on ${OSTYPE}. Do it manually : https://github.com/junegunn/fzf#installation"
 fi
+
+# Bootstrap
+# Copy files
+files_to_copy=( .bash_profile .vimrc )
+for file_ in "${files_to_copy[@]}"
+do
+	cp $file_ ~/$file_
+done
+folders_to_copy=( bin lib )
+for folder_ in "${folders_to_copy[@]}"
+do
+	cp -a ./$folder_/. ~/$folder_
+done

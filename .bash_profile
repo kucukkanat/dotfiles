@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
-# .bash_profile
-# ----------------------------
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-alias dotfiles_update="git clone https://github.com/kucukkanat/dotfiles ~/dot && cp -a ~/dot/. ~/ && rm -rf ~/dot && source ~/.bash_profile"
+# Prompt
+
+if [ -f ./lib/git_prompt ] && [ -f ./lib/git_completion ] ; then
+    source ./lib/git_prompt
+    source ./lib/git_completion
+    PS1='\w:\e[32m$(__git_ps1 "[%s]")\e[0m $ '
+else
+    PS1='\w $ '
+fi
 
 # User binaries
 if [ -d ~/bin ]; then
@@ -17,24 +24,14 @@ if [ -f ~/.bashrc ] ; then
   source ~/.bashrc
 fi
 
-# exports
-if [ -f ~/.bash_exports ]; then
-  source ~/.bash_exports
-fi
-
 # aliases
-if [ -f ~/.bash_aliases ]; then
-  source ~/.bash_aliases
-fi
-
-# Prompt
-if [ -f ~/.bash_prompt ]; then
-  source ~/.bash_prompt
+if [ -f ./lib/bash_aliases ]; then
+  source ./lib/bash_aliases
 fi
 
 # Features
 
-if [ -f ~/bin/fff ]; then
+if [ -f ./bin/fff ]; then
     # Run 'fff' with 'f' or whatever you decide to name the function.
     f() {
         fff "$@"
