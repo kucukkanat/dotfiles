@@ -31,7 +31,7 @@ fi
 
 # Features
 
-if [ -f ./bash_bin/fff ]; then
+if [ -f ./bin/fff ]; then
     # Run 'fff' with 'f' or whatever you decide to name the function.
     f() {
         fff "$@"
