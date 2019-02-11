@@ -73,7 +73,7 @@ for file_ in "${files_to_copy[@]}"
 do
 	cp $file_ ~/$file_
 done
-folders_to_copy=( bin lib )
+folders_to_copy=( bin bash_lib )
 for folder_ in "${folders_to_copy[@]}"
 do
 	cp -a ./$folder_/. ~/$folder_

@@ -4,9 +4,9 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 # Prompt
 
-if [ -f ./lib/git_prompt ] && [ -f ./lib/git_completion ] ; then
-    source ./lib/git_prompt
-    source ./lib/git_completion
+if [ -f ./bash_lib/git_prompt ] && [ -f ./bash_lib/git_completion ] ; then
+    source ./bash_lib/git_prompt
+    source ./bash_lib/git_completion
     PS1='\w:\e[32m$(__git_ps1 "[%s]")\e[0m $ '
 else
     PS1='\w $ '
@@ -25,13 +25,13 @@ if [ -f ~/.bashrc ] ; then
 fi
 
 # aliases
-if [ -f ./lib/bash_aliases ]; then
-  source ./lib/bash_aliases
+if [ -f ./bash_lib/bash_aliases ]; then
+  source ./bash_lib/bash_aliases
 fi
 
 # Features
 
-if [ -f ./bin/fff ]; then
+if [ -f ./bash_bin/fff ]; then
     # Run 'fff' with 'f' or whatever you decide to name the function.
     f() {
         fff "$@"
