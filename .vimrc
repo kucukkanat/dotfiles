@@ -8,6 +8,7 @@ let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 :set laststatus=2
 " Set tab size
 :set tabstop=2
+:set shiftwidth=2
 " Set line numbers
 :set number
 " Enable syntax highlighting
