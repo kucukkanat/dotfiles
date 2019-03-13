@@ -3,6 +3,17 @@
 # .bash_aliases
 # ----------------------------
 
+# Docker aliases
+alias images="docker images"
+alias containers="docker ps -a"
+kill_containers(){
+	docker rm $(docker ps -a -q) -f
+}
+# Teleport to location with search 
+tp(){
+				cd $(dirname $(fzf))
+}
+
 # clear everything!
 alias cls="clear && printf '\e[3J'"
 
