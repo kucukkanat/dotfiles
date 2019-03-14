@@ -34,10 +34,8 @@ install_homebrew() {
 }
 
 install_fzf() {
-    brew install fzf
-
-    # To install useful key bindings and fuzzy completion:
-    $(brew --prefix)/opt/fzf/install
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install
 }
 
 # Check OS
