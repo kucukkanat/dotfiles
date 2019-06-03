@@ -66,7 +66,7 @@ fi
 
 # Bootstrap
 # Copy files
-files_to_copy=( .bash_profile .vimrc )
+files_to_copy=( .bash_profile .vimrc .tmux.conf )
 for file_ in "${files_to_copy[@]}"
 do
 	cp $file_ ~/$file_
