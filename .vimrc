@@ -20,4 +20,5 @@ call plug#begin('~/.vim/plugged')
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'https://github.com/pangloss/vim-javascript'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'https://github.com/Quramy/tsuquyomi'
 call plug#end()
