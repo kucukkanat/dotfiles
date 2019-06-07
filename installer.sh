@@ -46,12 +46,12 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         install_linuxbrew
 
         install_fzf
-				install_lf
+		install_lf
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         install_homebrew
 
         install_fzf
-				install_lf
+		install_lf
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
         echo "Can not install fzf on ${OSTYPE}. Do it manually : https://github.com/junegunn/fzf#installation"

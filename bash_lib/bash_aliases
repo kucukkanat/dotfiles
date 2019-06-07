@@ -11,7 +11,7 @@ kill_containers(){
 }
 # Teleport to location with search 
 tp(){
-				cd $(dirname $(fzf))
+	cd $(dirname $(fzf))
 }
 
 # clear everything!
