@@ -37,16 +37,21 @@ install_fzf() {
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install
 }
+install_lf () {
+	brew install lf
+}
 
 # Check OS
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
         install_linuxbrew
 
         install_fzf
+				install_lf
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         install_homebrew
 
         install_fzf
+				install_lf
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
         echo "Can not install fzf on ${OSTYPE}. Do it manually : https://github.com/junegunn/fzf#installation"
