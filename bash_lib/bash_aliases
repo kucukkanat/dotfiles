@@ -49,7 +49,7 @@ alias mkdir="mkdir -pv"
 
 # make basic commands interactive and verbose
 alias cp='cp -iv'                       # interactive
-alias rm='rm -ri'                       # interactive
+## alias rm='rm -ri'                       # interactive
 alias mv='mv -iv'                       # interactive, verbose
 alias grep='grep -i --color='always''   # ignore case
 
