@@ -8,6 +8,22 @@ export PATH="$PATH:/Users/hsahin/.npm-packages/bin"
 export PATH="$PATH:/Users/hsahin/Applications/Chromium.app/Contents/MacOS"
 export NODE_TLS_REJECT_UNAUTHORIZED=0
 
+# For gokcehan/lf : https://github.com/gokcehan/lf/
+
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+
 
 # Prompt
 
