@@ -17,8 +17,7 @@ let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 " Vim-Plug Plugins
 " :PlugInstall to install plugins
 call plug#begin('~/.vim/plugged')
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'https://github.com/pangloss/vim-javascript'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/Quramy/tsuquyomi'
+Plug 'https://github.com/sheerun/vim-polyglot'
 call plug#end()
+
