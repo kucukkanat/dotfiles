@@ -4,6 +4,11 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # To avoid git commit signing error
 export GPG_TTY=$(tty)
 
+# https://geoff.greer.fm/lscolors/
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+alias ls="ls -G"
+
 export PATH="$PATH:/Users/hsahin/.npm-packages/bin"
 export PATH="$PATH:/Users/hsahin/Applications/Chromium.app/Contents/MacOS"
 export NODE_TLS_REJECT_UNAUTHORIZED=0
