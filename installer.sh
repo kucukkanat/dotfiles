@@ -3,7 +3,7 @@
 install_tmux_resurrect() {
 	git clone https://github.com/tmux-plugins/tmux-resurrect ~/tmux-resurrect
 }
-
+install_tmux_resurrect
 
 install_vim_plug() {
     echo "Installing vim-plug : "
