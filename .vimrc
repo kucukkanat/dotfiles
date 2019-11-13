@@ -22,7 +22,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Typescript autocomplete      
 Plug 'https://github.com/Quramy/tsuquyomi'
 " Syntax highlighting          
-Plug 'https://github.com/sheerun/vim-polyglot'
+" Plug 'https://github.com/sheerun/vim-polyglot'
 " File explorer                
 Plug 'https://github.com/scrooloose/nerdtree'
 call plug#end()   
