@@ -14,6 +14,11 @@ let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 " Enable syntax highlighting
 :syntax on  
 
+" Highlight search
+:set hlsearch
+" Press Space to turn off highlighting and clear any message already displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 " Vim-Plug Plugins
 " :PlugInstall to install plugins
 call plug#begin('~/.vim/plugged')
@@ -28,3 +33,5 @@ Plug 'https://github.com/scrooloose/nerdtree'
 " Typescript syntax
 Plug 'https://github.com/leafgarland/typescript-vim'
 call plug#end()
+
+colorscheme default
