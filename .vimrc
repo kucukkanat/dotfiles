@@ -19,19 +19,4 @@ let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" Vim-Plug Plugins
-" :PlugInstall to install plugins
-call plug#begin('~/.vim/plugged')
-" Prettier 
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" Typescript autocomplete
-Plug 'https://github.com/Quramy/tsuquyomi'
-" Syntax highlighting
-" Plug 'https://github.com/sheerun/vim-polyglot'
-" File explorer
-Plug 'https://github.com/scrooloose/nerdtree'
-" Typescript syntax
-Plug 'https://github.com/leafgarland/typescript-vim'
-call plug#end()
-
 colorscheme default
