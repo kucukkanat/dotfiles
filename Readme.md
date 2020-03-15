@@ -5,11 +5,19 @@
 Run 
 
 ```
-source .profile
+./install.sh
 ```
 
-_Tools I use :_
 
-- https://github.com/junegunn/fzf#installation
-- https://github.com/dylanaraps/fff
-- 
+## Sources:
+
+- https://github.com/junegunn/fzf
+- https://github.com/magicmonty/bash-git-prompt
+
+#### Vim Plugins
+- https://github.com/preservim/nerdtree
+- https://github.com/tomasiser/vim-code-dark
+- https://github.com/sheerun/vim-polyglot
+- https://github.com/mattn/emmet-vim
+- https://github.com/Quramy/tsuquyomi
+- https://github.com/prettier/vim-prettier

@@ -109,7 +109,6 @@ cp $DOTFILES_FOLDER/.bash_profile $HOME
 # Copy Tmux Config
 cp $DOTFILES_FOLDER/.tmux.conf $HOME
 
-
 prompt_user "Do you want to install vim plugins? :$end " install_vim_plugins vim_no_plugins
 
 # Install homebrew if MAC
@@ -117,9 +116,6 @@ if [[ "$OSTYPE" == "darwin"* ]] && [[ $(is_installed brew) == 0 ]]; then
 		printf "\nHomebrew is not installed, will install now: "
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
-
-# Install Git Prompt
-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 # Install FFF
 mkdir -p $HOME/bin
@@ -129,6 +125,8 @@ chmod +x $HOME/bin/fff
 # Install Git completion
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > $HOME/git-completion
 
+# Install Git Prompt
+git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 printf "\n${blu}Installation complete.${end} \n"
 
