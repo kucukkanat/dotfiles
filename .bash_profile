@@ -1,20 +1,12 @@
-#!/usr/bin/env bash
-
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/root/go/bin"
+export PATH="$PATH:$HOME/bin"
 # To avoid git commit signing error
 export GPG_TTY=$(tty)
 
-# https://geoff.greer.fm/lscolors/
-export LSCOLORS=Gxfxcxdxbxegedabagacad
-
-alias ls="ls -G"
-
-export PATH="$PATH:/Users/hsahin/.npm-packages/bin"
-export PATH="$PATH:/Users/hsahin/Applications/Chromium.app/Contents/MacOS"
-export NODE_TLS_REJECT_UNAUTHORIZED=0
-
+tp(){
+  cd $(dirname $(fzf));
+}
 # For gokcehan/lf : https://github.com/gokcehan/lf/
-
 lfcd () {
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
@@ -28,41 +20,20 @@ lfcd () {
         fi
     fi
 }
+# FFF https://github.com/dylanaraps/fff
+f() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
 
-
-# Prompt
-
-if [ -f ~/bash_lib/git_prompt ] && [ -f ~/bash_lib/git_completion ] ; then
-    source ~/bash_lib/git_prompt
-    source ~/bash_lib/git_completion
-    PS1='\w:\e[32m$(__git_ps1 "[%s]")\e[0m $ '
-else
-    PS1='\w $ '
+fif() {
+  grep --line-buffered --color=never -r "" * | fzf
+}
+# Git Prompt
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source $HOME/.bash-git-prompt/gitprompt.sh
 fi
 
-# User binaries
-if [ -d ~/bin ]; then
-    # add your bin folder to the path, if you have it.
-    # it's a good place to add all your scripts.
-    export PATH=:~/bin:$PATH
-fi
+source $HOME/git-completion
 
-# generic settings and exports
-if [ -f ~/.bashrc ] ; then
-  source ~/.bashrc
-fi
-
-# aliases
-if [ -f ~/bash_lib/bash_aliases ]; then
-  source ~/bash_lib/bash_aliases
-fi
-
-# Features
-
-if [ -f ./bin/fff ]; then
-    # Run 'fff' with 'f' or whatever you decide to name the function.
-    f() {
-        fff "$@"
-        cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
-    }
-fi
