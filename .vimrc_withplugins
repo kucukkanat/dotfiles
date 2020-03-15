@@ -37,7 +37,7 @@ let NERDTreeShowHidden=1
 " Add fzf if installed using homebrew
 set rtp+=/usr/local/opt/fzf
 " Add fzf if installed using git"
-iset rtp+=~/.fzf"
+set rtp+=~/.fzf" 
 
 " VSCode colorscheme
 set t_Co=256
