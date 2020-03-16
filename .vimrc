@@ -10,6 +10,8 @@ set laststatus=2
 set autoindent
 set tabstop=2
 set shiftwidth=2
+" Vim puts spaces instead of tab when you use tab key
+set expandtab
 " Set line numbers
 set number
 " Enable syntax highlighting
