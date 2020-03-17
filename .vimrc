@@ -29,4 +29,6 @@ vmap '' :w !pbcopy<CR><CR>
 " CR is Carriage Return ~ ENTER
 nmap TC :tabclose<CR>
 nmap TN :tabnew
-
+# Enable AutoComplete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
