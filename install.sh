@@ -88,6 +88,7 @@ install_vim_plugins(){
 	install_vim_plugin https://github.com/tomasiser/vim-code-dark.git
 	install_vim_plugin https://github.com/sheerun/vim-polyglot
 	install_vim_plugin https://github.com/mattn/emmet-vim
+	install_vim_plugin https://github.com/dense-analysis/ale.git
 
 	install_tsuquyomi
 	install_vimprettier

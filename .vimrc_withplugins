@@ -46,4 +46,6 @@ set rtp+=~/.fzf"
 set t_Co=256
 colorscheme codedark
 
-
+" Ale
+" Fix files with prettier, and then ESLint.
+let b:ale_fixers = ['prettier', 'eslint']
