@@ -104,6 +104,9 @@ vim_no_plugins(){
 ######################
 #### START SCRIPT ####
 ######################
+# Copy fish profile
+mkdir -p $HOME/.config/fish
+cp $DOTFILES_FOLDER/config.fish $HOME/.config/fish
 # Copy bash profile
 cp $DOTFILES_FOLDER/.bash_profile $HOME
 # Copy Tmux Config
