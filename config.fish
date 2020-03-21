@@ -5,7 +5,8 @@ set PATH $NPM_PACKAGES/bin $PATH
 set MANPATH $NPM_PACKAGES/share/man $MANPATH  
 
 function f
-  fff
+  fff $argv[1]
+	cd (cat $HOME/.cache/fff/.fff_d)
 end
 
 function lg
