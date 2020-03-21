@@ -1,5 +1,8 @@
-export PATH="$PATH:/root/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/bin"
+export PATH="$HOME/.npm-packages/bin"
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
 # To avoid git commit signing error
 export GPG_TTY=$(tty)
 

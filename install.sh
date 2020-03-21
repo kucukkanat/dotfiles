@@ -112,6 +112,15 @@ cp $DOTFILES_FOLDER/.bash_profile $HOME
 # Copy Tmux Config
 cp $DOTFILES_FOLDER/.tmux.conf $HOME
 
+# Npm global without sudo
+mkdir -p "${HOME}/.npm-packages"
+if [ -n $(command -v npm) ]; then
+	npm config set prefix "${HOME}/.npm-packages"
+else
+	printf "\nNPM is not installed\n"
+	printf "Install npm and run this script again to set npm config\n"
+fi
+
 prompt_user "Do you want to install vim plugins? :$end " install_vim_plugins vim_no_plugins
 
 # Install homebrew if MAC
