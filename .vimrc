@@ -32,3 +32,5 @@ nmap TN :tabnew
 " Enable AutoComplete
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+
+" ===== END CORE CONFIG ======= "
