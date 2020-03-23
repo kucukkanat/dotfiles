@@ -32,6 +32,7 @@ f() {
 fif() {
   grep --line-buffered --color=never -r "" * | fzf
 }
+function gi() { curl -sL https://www.gitignore.io/api/\$@ ;}
 # Git Prompt
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=1
