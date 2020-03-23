@@ -32,5 +32,6 @@ nmap TN :tabnew
 " Enable AutoComplete
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-
+" Set Mouse for 'a' = 'All'
+set mouse=a
 " ===== END CORE CONFIG ======= "
