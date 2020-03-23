@@ -5,6 +5,10 @@ set PATH $NPM_PACKAGES/bin $PATH
 set MANPATH $NPM_PACKAGES/share/man $MANPATH  
 set -x LSCOLORS gxfxcxdxbxegedabagacad
 
+function gi
+	curl -sL https://www.gitignore.io/api/$argv
+end
+
 function f
   fff $argv[1]
 	cd (cat $HOME/.cache/fff/.fff_d)
