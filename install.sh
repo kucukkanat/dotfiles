@@ -90,6 +90,7 @@ install_vim_plugins(){
 	install_vim_plugin https://github.com/mattn/emmet-vim
 	install_vim_plugin https://github.com/dense-analysis/ale.git
   install_vim_plugin https://github.com/leafgarland/typescript-vim
+  install_vim_plugin https://github.com/vim-airline/vim-airline
 
 	install_tsuquyomi
 	install_vimprettier
