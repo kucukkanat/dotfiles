@@ -3,6 +3,7 @@ set PATH $HOME/go/bin $PATH
 set NPM_PACKAGES "$HOME/.npm-packages"
 set PATH $NPM_PACKAGES/bin $PATH
 set MANPATH $NPM_PACKAGES/share/man $MANPATH  
+set -x LSCOLORS gxfxcxdxbxegedabagacad
 
 function f
   fff $argv[1]
