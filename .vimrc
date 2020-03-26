@@ -36,4 +36,6 @@ set omnifunc=syntaxcomplete#Complete
 set mouse=a
 " Go to file for npm scoped packages
 set isfname+=@-@
+" Set path for nodejs projects for gf
+set path+=$PWD/node_modules
 " ===== END CORE CONFIG ======= "
