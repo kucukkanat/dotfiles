@@ -54,3 +54,5 @@ set wrap "Wrap lines
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 " ===== END CORE CONFIG ======= "
+
+source $HOME/.vimpluginrc
