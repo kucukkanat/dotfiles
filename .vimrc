@@ -34,4 +34,6 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 " Set Mouse for 'a' = 'All'
 set mouse=a
+" Go to file for npm scoped packages
+set isfname+=@-@
 " ===== END CORE CONFIG ======= "
