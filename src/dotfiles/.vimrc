@@ -1,11 +1,17 @@
-" Always search case insensitive"
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Always search case insensitive
 set ignorecase
+" Autoload file if changed outside vim
+set autoread
 " No irritating swap file
 set noswapfile
 " Map esc key to ;; for conveinenve
 imap ;; <Esc>
-" Show status line (filename) # https://shapeshed.com/vim-statuslines/
-set laststatus=2
 " Set tab size
 set autoindent
 set tabstop=2
@@ -25,6 +31,7 @@ set suffixesadd+=.jsx
 set suffixesadd+=.tsx
 " Copy to clipboard
 vmap '' :w !pbcopy<CR><CR>
+
 " Open / Close tabs easily
 " CR is Carriage Return ~ ENTER
 nmap TC :tabclose<CR>
@@ -38,23 +45,12 @@ set mouse=a
 set isfname+=@-@
 " Set path for nodejs projects for gf
 set path+=$PWD/node_modules
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+" Display different types of white spaces.
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 " ===== END CORE CONFIG ======= "
-
-" Toggle NERDTree easily!
-nmap ,n :NERDTreeFind<CR>
-nmap ,m :NERDTreeToggle<CR>
-" Show hidden files on NERDtree by default
-let NERDTreeShowHidden=1
-
-" Add fzf if installed using homebrew
-set rtp+=/usr/local/opt/fzf
-" Add fzf if installed using git"
-set rtp+=~/.fzf" 
-
-" VSCode colorscheme
-set t_Co=256
-colorscheme codedark
-
-" Ale
-" Fix files with prettier, and then ESLint.
-let g:ale_fixers = ['prettier', 'eslint']

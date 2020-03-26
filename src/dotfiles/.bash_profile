@@ -1,7 +1,9 @@
+export LC_ALL=en_US.UTF-8
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
 export LSCOLORS=gxfxcxdxbxegedabagacad
 # To avoid git commit signing error
 export GPG_TTY=$(tty)
@@ -23,12 +25,16 @@ lfcd () {
         fi
     fi
 }
+
 # FFF https://github.com/dylanaraps/fff
 f() {
     fff "$@"
     cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
 }
 
+lg() {
+    lazygit
+}
 fif() {
   grep --line-buffered --color=never -r "" * | fzf
 }
