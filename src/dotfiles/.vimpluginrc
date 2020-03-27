@@ -16,3 +16,6 @@ colorscheme codedark
 " Ale
 " Fix files with prettier, and then ESLint.
 let g:ale_fixers = ['prettier', 'eslint']
+" Tsuquyomi enable on javascript files
+" Tsuquyomi go to definition works with js files too 
+let g:tsuquyomi_javascript_support=1
