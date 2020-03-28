@@ -19,3 +19,6 @@ let g:ale_fixers = ['prettier', 'eslint']
 " Tsuquyomi enable on javascript files
 " Tsuquyomi go to definition works with js files too 
 let g:tsuquyomi_javascript_support=1
+
+" Enable Vim Airline  Powerline fonts
+let g:airline_powerline_fonts = 1
