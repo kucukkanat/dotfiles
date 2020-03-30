@@ -6,6 +6,8 @@ nmap <leader>w :w!<cr>
 
 " Always search case insensitive
 set ignorecase
+" Search is case sensitive if contains an uppercase letter
+set smartcase
 " Autoload file if changed outside vim
 set autoread
 " No irritating swap file
