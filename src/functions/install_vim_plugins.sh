@@ -15,6 +15,7 @@ install_vim_plugin https://github.com/pangloss/vim-javascript
 install_vim_plugin https://github.com/mattn/emmet-vim
 install_vim_plugin https://github.com/dense-analysis/ale.git
 install_vim_plugin https://github.com/leafgarland/typescript-vim
+install_vim_plugin https://github.com/peitalin/vim-jsx-typescript
 install_vim_plugin https://github.com/vim-airline/vim-airline
 install_vim_plugin https://tpope.io/vim/fugitive.git
 # These require 'prettier' and 'typescript' installed!
