@@ -3,7 +3,8 @@
 let mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
-
+" Make backspace work normal !
+set backspace=2
 " Always search case insensitive
 set ignorecase
 " Search is case sensitive if contains an uppercase letter
