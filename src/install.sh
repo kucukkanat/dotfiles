@@ -46,6 +46,8 @@ go get github.com/jesseduffield/lazygit
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 # Install Git completion
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash >$HOME/git-completion
+# Install Fisher for Fish
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 # Npm global without sudo
 mkdir -p "${HOME}/.npm-packages"
 if [ -n $(command -v npm) ]; then
