@@ -22,3 +22,13 @@ let g:tsuquyomi_javascript_support=1
 
 " Enable Vim Airline  Powerline fonts
 let g:airline_powerline_fonts = 1
+
+" Coc.vim Config
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
