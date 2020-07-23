@@ -34,7 +34,7 @@ function lfcd
 end
 
 # Git shortcuts
-abbr -a -g gp git push origin HEAD
+abbr -a -g gpush git push origin HEAD
 abbr -a -g gc git commit -m
 abbr -a -g ga git add .
-abbr -a -g gp git pull origin (git rev-parse --abbrev-ref HEAD)
+abbr -a -g gpull git pull origin (git rev-parse --abbrev-ref HEAD)
