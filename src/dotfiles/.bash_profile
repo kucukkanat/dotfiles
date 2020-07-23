@@ -47,3 +47,9 @@ fi
 # Git completion
 source $HOME/git-completion
 
+# Git shortcuts
+alias gpush=git push origin HEAD
+alias gc=git commit -m
+alias ga=git add .
+alias gpull=git pull origin (git rev-parse --abbrev-ref HEAD)
+
