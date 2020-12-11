@@ -56,9 +56,9 @@ set wrap "Wrap lines
 " Display different types of white spaces.
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
-" Better active tab highlight
-hi TabLineSel ctermfg=Red ctermbg=Yellow
-
 " ===== END CORE CONFIG ======= "
 
 source $HOME/.vimpluginrc
+
+" Better active tab highlight
+hi TabLineSel ctermfg=Red ctermbg=Yellow
