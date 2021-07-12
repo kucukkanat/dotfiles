@@ -24,3 +24,6 @@ git clone https://github.com/junegunn/fzf.vim.git $VIM_PLUGIN_DIR/fzf.vim
 # Vim Fugitive
 git clone https://tpope.io/vim/fugitive.git $VIM_PLUGIN_DIR/fugitive
 # vim -u NONE -c "helptags fugitive/doc" -c q
+
+# Vim Typescript
+git clone https://github.com/leafgarland/typescript-vim.git $VIM_PLUGIN_DIR/typescript-vim
