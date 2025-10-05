@@ -1,5 +1,6 @@
 # CROSS PLATFORM UTILITY FUNCTIONS FOR BASH
 
+export NONINTERACTIVE=1
 install_homebrew() {
     if ! command -v brew &> /dev/null; then
         echo "Installing Homebrew..."   

@@ -115,7 +115,7 @@ fi
 # Install Starship for cool terminal prompt
 if ! command -v starship &> /dev/null; then
     echo "Installing Starship prompt..."
-    curl -fsSL https://starship.rs/install.sh | sh
+    curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 fi
 
 # Special handling for openssh-server (Linux only because macOS has it pre-installed)
