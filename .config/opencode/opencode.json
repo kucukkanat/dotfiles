@@ -18,6 +18,57 @@
         }
       }
     },
-  },
-  
+    "ch.at": {
+      "name": "[FREE] ch.at - OpenAI",
+      "options": {
+        "baseURL": "https://ch.at/v1/"
+      },
+      "models": {
+        "gpt-5": {
+          "name": "GPT 5"
+        }
+      }
+    },
+    "pollinations": {
+      "name": "[FREE] Pollinations",
+      "options": {
+        "baseURL": "https://text.pollinations.ai/openai"
+      },
+      "models": {
+        "openai-large": {
+          "name": "GPT 5 Chat"
+        },
+        "deepseek": {
+          "name": "deepseek"
+        },
+        "deepseek-reasoning": {
+          "name": "deepseek-reasoning"
+        },
+        "gemini": {
+          "name": "gemini"
+        },
+        "gemini-search": {
+          "name": "gemini-search"
+        },
+        "mistral": {
+          "name": "mistral"
+        },
+        "nova-fast": {
+          "name": "nova-fast"
+        },
+        "openai": {
+          "name": "openai"
+        },
+        "openai-audio": {
+          "name": "openai-audio"
+        },
+        "openai-fast": {
+          "name": "openai-fast"
+        },
+        "openai-reasoning": {
+          "name": "openai-reasoning"
+        }
+      }
+    }
+  }
 }
