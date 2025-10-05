@@ -64,6 +64,19 @@ install_package "vim"
 install_package "git"
 install_package "jq"
 
+# Install fff using basher if available
+if command -v basher &> /dev/null; then
+    if [ ! -d "$HOME/.basher/packages/github.com/dylanaraps/fff" ]; then
+        echo "Installing fff using basher..."
+        basher install dylanaraps/fff
+        echo "fff installed"
+    else
+        echo "fff is already installed via basher"
+    fi
+else
+    echo "basher not found. fff will not be installed automatically."
+fi
+
 # Special handling for openssh-server (Linux only because macOS has it pre-installed)
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     if ! dpkg -l | grep -q openssh-server; then
@@ -81,6 +94,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     fi
 fi
 
+
+# ================ COPY DOTFILES ================
 # Create temporary directory
 TEMP_DIR=$(mktemp -d)
 echo "Created temporary directory: $TEMP_DIR"
