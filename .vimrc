@@ -116,6 +116,10 @@ tnoremap <leader>tt <C-\><C-n>:FloatermToggle<CR>
 let g:floaterm_width=0.8
 let g:floaterm_height=0.8
 
+" For Astro file syntax (requires astro-vim - wuelnerdotexe/vim-astro )
+autocmd BufNewFile,BufRead *.astro setfiletype astro
+autocmd FileType astro set syntax=astro
+
 " Auto commands
 augroup vimrc
     autocmd!

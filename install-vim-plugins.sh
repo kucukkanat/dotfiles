@@ -22,6 +22,9 @@ clone_plugin() {
 # Install essential plugins using Vim's native package system
 echo "Installing plugins..."
 
+# Astro synta highlighting
+clone_plugin "wuelnerdotexe/vim-astro" "vim-astro"
+
 # Color scheme
 clone_plugin "morhetz/gruvbox" "gruvbox"
 
