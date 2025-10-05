@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source ./utils.sh
 set -e
 
 # Check if oh-my-bash is installed
@@ -17,53 +17,22 @@ if [ ! -d "$HOME/.basher" ]; then
     git clone --depth 1 https://github.com/basherpm/basher.git "$HOME/.basher"
     echo 'export PATH="$HOME/.basher/bin:$PATH"' >> "$HOME/.bash_profile"
     echo "basher installed"
+    source "$HOME/.bash_profile"
 else
     echo "basher is already installed"
 fi
 
-# Function to check and install packages
-install_package() {
-    local package=$1
-    if ! command -v "$package" &> /dev/null; then
-        echo "Installing $package..."
-        if [[ "$OSTYPE" == "darwin"* ]]; then
-            # macOS
-            if command -v brew &> /dev/null; then
-                brew install "$package"
-            else
-                echo "Homebrew not found. Please install Homebrew first."
-                exit 1
-            fi
-        elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-            # Linux
-            export DEBIAN_FRONTEND=noninteractive
-            if command -v apt-get &> /dev/null; then
-                sudo apt-get update && sudo apt-get install -y "$package"
-            elif command -v yum &> /dev/null; then
-                sudo yum install -y "$package"
-            elif command -v pacman &> /dev/null; then
-                sudo pacman -S --noconfirm "$package"
-            else
-                echo "No known package manager found. Please install $package manually."
-                exit 1
-            fi
-        fi
-        echo "$package installed"
-    else
-        echo "$package is already installed"
-    fi
-}
 
 # Install required tools
 echo "Checking and installing required tools..."
-install_package "tmux"
-install_package "curl"
-install_package "wget"
-install_package "unzip"
-install_package "vim"
-install_package "git"
-install_package "jq"
-install_package "fzf"
+ensure_installed "tmux"
+ensure_installed "curl"
+ensure_installed "wget"
+ensure_installed "unzip"
+ensure_installed "vim"
+ensure_installed "git"
+ensure_installed "jq"
+ensure_installed "fzf"
 
 # Install fff using basher if available
 if command -v basher &> /dev/null; then
@@ -80,21 +49,8 @@ fi
 
 # Special handling for openssh-server (Linux only because macOS has it pre-installed)
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    if ! dpkg -l | grep -q openssh-server; then
-        echo "Installing openssh-server..."
-        if command -v apt-get &> /dev/null; then
-            sudo apt-get update && sudo apt-get install -y openssh-server
-        elif command -v yum &> /dev/null; then
-            sudo yum install -y openssh-server
-        elif command -v pacman &> /dev/null; then
-            sudo pacman -S --noconfirm openssh
-        fi
-        echo "openssh-server installed"
-    else
-        echo "openssh-server is already installed"
-    fi
+    ensure_installed "openssh-server"
 fi
-
 
 # Copy dotfiles to home directory
 echo "Installing dotfiles..."
@@ -117,8 +73,14 @@ if [ -f ".tmux.conf" ]; then
     echo "Installed .tmux.conf"
 fi
 
+# Copy utils
+if [ -f "utils.sh" ]; then
+    cp "utils.sh" "$HOME/utils.sh"
+    echo "Installed utils.sh"
+fi
+
 # Source the new bash profile
-echo "Sourcing .bash_profile..."
+echo "Re-Sourcing .bash_profile..."
 source "$HOME/.bash_profile"
 
 echo "Dotfiles installation complete!"

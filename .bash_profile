@@ -5,6 +5,9 @@ export LANG=C
 export PATH=$PATH:$HOME/.bun/bin
 export PATH=$PATH:$HOME/.deno/bin
 
+# Cross Platform Utility functions
+source "$HOME/utils.sh"
+
 # Starship prompt setter
 if command -v starship &> /dev/null; then
     eval "$(starship init bash)"

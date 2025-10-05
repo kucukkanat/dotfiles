@@ -36,9 +36,6 @@ clone_plugin "vim-airline/vim-airline-themes" "vim-airline-themes"
 clone_plugin "junegunn/fzf" "fzf"
 clone_plugin "junegunn/fzf.vim" "fzf.vim"
 
-    
-
-
 # Syntax highlighting
 clone_plugin "sheerun/vim-polyglot" "vim-polyglot"
 
