@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source ./utils.sh
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/utils.sh"
 ### Convenience script to install dotfiles
 
 # Check if sudo is installed (Linux only)
