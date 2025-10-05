@@ -11,6 +11,7 @@ if command -v starship &> /dev/null; then
 fi
 
 # Basher package manager
+export PATH="$HOME/.basher/bin:$PATH"
 if command -v basher &> /dev/null; then
     eval "$(basher init - bash)"
 fi

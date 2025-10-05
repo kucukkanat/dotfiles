@@ -27,6 +27,7 @@ git clone https://github.com/kucukkanat/dotfiles --depth=1 "$TEMP_DIR"
 # Run install script from temp directory
 cd "$TEMP_DIR"
 bash install.sh
+bash configure-vim.sh
 
 # Clean up
 cd ..
