@@ -33,12 +33,11 @@ clone_plugin "vim-airline/vim-airline" "vim-airline"
 clone_plugin "vim-airline/vim-airline-themes" "vim-airline-themes"
 
 # Fuzzy finder (requires fzf binary and base plugin)
-if command -v fzf >/dev/null 2>&1; then
-    clone_plugin "junegunn/fzf" "fzf"
-    clone_plugin "junegunn/fzf.vim" "fzf.vim"
-else
-    echo "Warning: fzf not found. Install with: brew install fzf (macOS) or apt install fzf (Ubuntu)"
-fi
+clone_plugin "junegunn/fzf" "fzf"
+clone_plugin "junegunn/fzf.vim" "fzf.vim"
+
+    
+
 
 # Syntax highlighting
 clone_plugin "sheerun/vim-polyglot" "vim-polyglot"

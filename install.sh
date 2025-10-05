@@ -63,6 +63,7 @@ install_package "unzip"
 install_package "vim"
 install_package "git"
 install_package "jq"
+install_package "fzf"
 
 # Install fff using basher if available
 if command -v basher &> /dev/null; then
