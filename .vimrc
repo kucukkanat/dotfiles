@@ -87,7 +87,7 @@ colorscheme gruvbox
 set background=dark
 
 " NERDTree
-nnoremap <leader>n :Explore<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = []
 let g:NERDTreeShowHidden = 1
 
