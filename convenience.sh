@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 ### Convenience script to install dotfiles
 
-
 export DEBIAN_FRONTEND=noninteractive
 ensure_installed(){
     local pkg=$1
@@ -9,11 +8,23 @@ ensure_installed(){
         echo "Installing $pkg..."
         if [[ "$OSTYPE" == "linux-gnu"* ]]; then
             if command -v apt-get &> /dev/null; then
-                sudo apt-get update && sudo apt-get install -y $pkg
+                if [ "$pkg" = "sudo" ]; then
+                    apt-get update && apt-get install -y $pkg
+                else
+                    sudo apt-get update && sudo apt-get install -y $pkg
+                fi
             elif command -v yum &> /dev/null; then
-                sudo yum install -y $pkg
+                if [ "$pkg" = "sudo" ]; then
+                    yum install -y $pkg
+                else
+                    sudo yum install -y $pkg
+                fi
             elif command -v pacman &> /dev/null; then
-                sudo pacman -S --noconfirm $pkg
+                if [ "$pkg" = "sudo" ]; then
+                    pacman -S --noconfirm $pkg
+                else
+                    sudo pacman -S --noconfirm $pkg
+                fi
             else
                 echo "No known package manager found. Please install $pkg manually."
                 exit 1
@@ -35,8 +46,11 @@ ensure_installed(){
     fi
     echo ""
 }
+
 # Check if sudo is installed (Linux only)
-ensure_installed "sudo"
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    ensure_installed "sudo"
+fi
 
 # Check if git is installed (Linux only)
 ensure_installed "git"
