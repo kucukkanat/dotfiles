@@ -143,4 +143,6 @@ echo "• Use :help <plugin-name> for detailed documentation"
 echo "• Most plugins work with visual selections too"
 echo "• Leader key is typically \\ (backslash) by default"
 echo "• Press Tab in command mode to autocomplete commands"
+echo ""
+
 

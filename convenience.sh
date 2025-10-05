@@ -30,6 +30,18 @@ bash install.sh
 bash configure-vim.sh
 
 # Clean up
-cd ..
-rm -rf "$TEMP_DIR"
-echo "Installation complete and temporary directory cleaned up"
+
+
+echo "=== Cleanup ==="
+read -p "Do you want to delete the temporary directory created during installation? (y/N): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Cleaning up temporary files..."
+    cd ..
+    rm -rf "$TEMP_DIR"
+    echo "Installation complete and temporary directory cleaned up"
+    # Note: This script doesn't create temp directories, but if it did, they would be cleaned here
+    echo "Cleanup complete."
+else
+    echo "Temporary files preserved."
+fi
