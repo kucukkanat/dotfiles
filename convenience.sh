@@ -4,26 +4,46 @@
 export DEBIAN_FRONTEND=noninteractive
 ensure_installed(){
     local pkg=$1
+    local use_sudo=false
+    
+    # Parse arguments: shift to remove the first argument (package name)
+    # then loop through remaining arguments to find flags
+    shift
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            --sudo)
+                # Set use_sudo to true when --sudo flag is found
+                use_sudo=true
+                shift
+                # Terminator for the case statement
+                ;;
+            *)
+                # Skip any unknown arguments
+                shift
+                ;;
+        esac
+    done
+    
     if ! command -v $pkg &> /dev/null; then
         echo "Installing $pkg..."
         if [[ "$OSTYPE" == "linux-gnu"* ]]; then
             if command -v apt-get &> /dev/null; then
-                if [ "$pkg" = "sudo" ]; then
-                    apt-get update && apt-get install -y $pkg
-                else
+                if [ "$use_sudo" = "true" ]; then
                     sudo apt-get update && sudo apt-get install -y $pkg
+                else
+                    apt-get update && apt-get install -y $pkg
                 fi
             elif command -v yum &> /dev/null; then
-                if [ "$pkg" = "sudo" ]; then
-                    yum install -y $pkg
-                else
+                if [ "$use_sudo" = "true" ]; then
                     sudo yum install -y $pkg
+                else
+                    yum install -y $pkg
                 fi
             elif command -v pacman &> /dev/null; then
-                if [ "$pkg" = "sudo" ]; then
-                    pacman -S --noconfirm $pkg
-                else
+                if [ "$use_sudo" = "true" ]; then
                     sudo pacman -S --noconfirm $pkg
+                else
+                    pacman -S --noconfirm $pkg
                 fi
             else
                 echo "No known package manager found. Please install $pkg manually."
@@ -53,7 +73,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 # Check if git is installed (Linux only)
-ensure_installed "git"
+ensure_installed "git" --sudo
 
 # Create temporary directory for installation
 TEMP_DIR=$(mktemp -d)

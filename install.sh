@@ -4,15 +4,47 @@ set -e
 export DEBIAN_FRONTEND=noninteractive
 ensure_installed(){
     local pkg=$1
+    local use_sudo=false
+    
+    # Parse arguments: shift to remove the first argument (package name)
+    # then loop through remaining arguments to find flags
+    shift
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            --sudo)
+                # Set use_sudo to true when --sudo flag is found
+                use_sudo=true
+                shift
+                # Terminator for the case statement
+                ;;
+            *)
+                # Skip any unknown arguments
+                shift
+                ;;
+        esac
+    done
+    
     if ! command -v $pkg &> /dev/null; then
         echo "Installing $pkg..."
         if [[ "$OSTYPE" == "linux-gnu"* ]]; then
             if command -v apt-get &> /dev/null; then
-                sudo apt-get update && sudo apt-get install -y $pkg
+                if [ "$use_sudo" = "true" ]; then
+                    sudo apt-get update && sudo apt-get install -y $pkg
+                else
+                    apt-get update && apt-get install -y $pkg
+                fi
             elif command -v yum &> /dev/null; then
-                sudo yum install -y $pkg
+                if [ "$use_sudo" = "true" ]; then
+                    sudo yum install -y $pkg
+                else
+                    yum install -y $pkg
+                fi
             elif command -v pacman &> /dev/null; then
-                sudo pacman -S --noconfirm $pkg
+                if [ "$use_sudo" = "true" ]; then
+                    sudo pacman -S --noconfirm $pkg
+                else
+                    pacman -S --noconfirm $pkg
+                fi
             else
                 echo "No known package manager found. Please install $pkg manually."
                 exit 1
@@ -58,14 +90,14 @@ fi
 
 # Install required tools
 echo "Checking and installing required tools..."
-ensure_installed "tmux"
-ensure_installed "curl"
-ensure_installed "wget"
-ensure_installed "unzip"
-ensure_installed "vim"
-ensure_installed "git"
-ensure_installed "jq"
-ensure_installed "fzf"
+ensure_installed "tmux" --sudo
+ensure_installed "curl" --sudo
+ensure_installed "wget" --sudo
+ensure_installed "unzip" --sudo
+ensure_installed "vim" --sudo
+ensure_installed "git" --sudo
+ensure_installed "jq" --sudo
+ensure_installed "fzf" --sudo
 
 # Install fff using basher if available
 if command -v basher &> /dev/null; then
@@ -82,7 +114,7 @@ fi
 
 # Special handling for openssh-server (Linux only because macOS has it pre-installed)
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    ensure_installed "openssh-server"
+    ensure_installed "openssh-server" --sudo
 fi
 
 # Copy dotfiles to home directory
