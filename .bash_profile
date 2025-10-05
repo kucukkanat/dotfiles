@@ -8,7 +8,9 @@ export PATH=$PATH:$HOME/.deno/bin
 # Claude code configutaition
 export ANTHROPIC_BASE_URL=https://api.z.ai/api/anthropic
 export ANTHROPIC_AUTH_TOKEN="YOUR_API_KEY"
-
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="glm-4.5-air"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="glm-4.6"
+export ANTHROPIC_DEFAULT_OPUS_MODEL="glm-4.6"
 # Warn if ANTHROPIC_AUTH_TOKEN is still the placeholder
 if [[ -z "${ANTHROPIC_AUTH_TOKEN}" || "${ANTHROPIC_AUTH_TOKEN}" == "YOUR_API_KEY" ]]; then
     printf "\n\e[1;33m[WARNING] ANTHROPIC_AUTH_TOKEN is using the placeholder value.\e[0m\n"
