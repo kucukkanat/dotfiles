@@ -5,11 +5,11 @@
 if [[ "$OSTYPE" == "linux-gnu"* ]] && ! command -v git &> /dev/null; then
     echo "Installing git..."
     if command -v apt-get &> /dev/null; then
-        sudo apt-get update && sudo apt-get install -y git
+        apt-get update && apt-get install -y git
     elif command -v yum &> /dev/null; then
-        sudo yum install -y git
+        yum install -y git
     elif command -v pacman &> /dev/null; then
-        sudo pacman -S --noconfirm git
+        pacman -S --noconfirm git
     else
         echo "No known package manager found. Please install git manually."
         exit 1
