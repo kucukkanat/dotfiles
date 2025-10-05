@@ -1,15 +1,32 @@
 #!/usr/bin/env bash
 ### Convenience script to install dotfiles
 
+
+# Check if sudo is installed (Linux only)
+if [[ "$OSTYPE" == "linux-gnu"* ]] && ! command -v sudo &> /dev/null; then
+    echo "Installing sudo..."
+    if command -v apt-get &> /dev/null; then
+        su -c "apt-get update && apt-get install -y sudo"
+    elif command -v yum &> /dev/null; then
+        su -c "yum install -y sudo"
+    elif command -v pacman &> /dev/null; then
+        su -c "pacman -S --noconfirm sudo"
+    else
+        echo "No known package manager found. Please install sudo manually."
+        exit 1
+    fi
+    echo "sudo installed"
+fi
+
 # Check if git is installed (Linux only)
 if [[ "$OSTYPE" == "linux-gnu"* ]] && ! command -v git &> /dev/null; then
     echo "Installing git..."
     if command -v apt-get &> /dev/null; then
-        apt-get update && apt-get install -y git
+        sudo apt-get update && sudo apt-get install -y git
     elif command -v yum &> /dev/null; then
-        yum install -y git
+        sudo yum install -y git
     elif command -v pacman &> /dev/null; then
-        pacman -S --noconfirm git
+        sudo pacman -S --noconfirm git
     else
         echo "No known package manager found. Please install git manually."
         exit 1
