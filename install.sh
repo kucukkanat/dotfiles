@@ -156,6 +156,12 @@ if [ -d ".config" ]; then
     echo "Installed .config directory"
 fi
 
+# Copy .continue directory
+if [ -d ".continue" ]; then
+    cp -r ".continue" "$HOME/.continue"
+    echo "Installed .continue directory"
+fi
+
 # Source the new bash profile
 echo "Re-Sourcing .bash_profile..."
 source "$HOME/.bash_profile"

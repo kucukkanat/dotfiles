@@ -8,8 +8,19 @@ models:
     description: Free openai gpt5 from ch.at
     apiBase: https://ch.at/v1
     default: true
-  - name: Ollama Local
+  - name: Ollama Local Llama3.2
     model: llama3.2
     provider: openai
     apiBase: http://localhost:11434/v1
     description: Ollama local models
+  - name: Ollama Local qwen2.5-codee:14b
+    model: qwen2.5-coder:14b
+    provider: openai
+    apiBase: http://localhost:11434/v1
+    description: Ollama local models
+  - name: zai glm-4.5
+    model: glm-4.5
+    apiKey: xxxxxxx
+    provider: openai
+    apiBase: https://api.z.ai/api/coding/paas/v4
+    description: zai glm-4.5 from zai.com
