@@ -5,6 +5,18 @@ export LANG=C
 export PATH=$PATH:$HOME/.bun/bin
 export PATH=$PATH:$HOME/.deno/bin
 
+# Claude code configutaition
+export ANTHROPIC_BASE_URL=https://api.z.ai/api/anthropic
+export ANTHROPIC_AUTH_TOKEN="YOUR_API_KEY"
+
+# Warn if ANTHROPIC_AUTH_TOKEN is still the placeholder
+if [[ -z "${ANTHROPIC_AUTH_TOKEN}" || "${ANTHROPIC_AUTH_TOKEN}" == "YOUR_API_KEY" ]]; then
+    printf "\n\e[1;33m[WARNING] ANTHROPIC_AUTH_TOKEN is using the placeholder value.\e[0m\n"
+    printf "Please update it with your API key:\n"
+    printf "  \e[1;36mhttps://z.ai/manage-apikey/apikey-list\e[0m\n\n"
+    printf "After updating, reload this file: \e[1;32msource ~/.bash_profile\e[0m\n\n"
+fi
+
 # Cross Platform Utility functions
 source "$HOME/utils.sh"
 
@@ -29,6 +41,7 @@ dka() {
 editprofile() {
     local bp="$HOME/.bash_profile"
     vim $bp  && source $bp
+    echo "Bash profile edited and reloaded!"
 }
 
 # fff file manager

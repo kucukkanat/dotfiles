@@ -112,6 +112,12 @@ else
     echo "basher not found. fff will not be installed automatically."
 fi
 
+# Install Starship for cool terminal prompt
+if ! command -v starship &> /dev/null; then
+    echo "Installing Starship prompt..."
+    curl -fsSL https://starship.rs/install.sh | bash -s -- -y
+fi
+
 # Special handling for openssh-server (Linux only because macOS has it pre-installed)
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     ensure_installed "openssh-server" --sudo
@@ -142,6 +148,12 @@ fi
 if [ -f "utils.sh" ]; then
     cp "utils.sh" "$HOME/utils.sh"
     echo "Installed utils.sh"
+fi
+
+# Copy .config directory
+if [ -d ".config" ]; then
+    cp -r ".config" "$HOME/.config"
+    echo "Installed .config directory"
 fi
 
 # Source the new bash profile
