@@ -95,33 +95,26 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 
-# ================ COPY DOTFILES ================
-# Create temporary directory
-TEMP_DIR=$(mktemp -d)
-echo "Created temporary directory: $TEMP_DIR"
-
-# Clone dotfiles repository
-echo "Cloning dotfiles repository..."
-git clone https://github.com/kucukkanat/dotfiles.git "$TEMP_DIR"
-
 # Copy dotfiles to home directory
 echo "Installing dotfiles..."
 
 # Copy .bash_profile
-if [ -f "$TEMP_DIR/.bash_profile" ]; then
-    cp "$TEMP_DIR/.bash_profile" "$HOME/.bash_profile"
+if [ -f ".bash_profile" ]; then
+    cp ".bash_profile" "$HOME/.bash_profile"
     echo "Installed .bash_profile"
 fi
 
 # Copy .vimrc
-if [ -f "$TEMP_DIR/.vimrc" ]; then
-    cp "$TEMP_DIR/.vimrc" "$HOME/.vimrc"
+if [ -f ".vimrc" ]; then
+    cp ".vimrc" "$HOME/.vimrc"
     echo "Installed .vimrc"
 fi
 
-# Clean up
-echo "Cleaning up..."
-rm -rf "$TEMP_DIR"
+# Copy .tmux.conf
+if [ -f ".tmux.conf" ]; then
+    cp ".tmux.conf" "$HOME/.tmux.conf"
+    echo "Installed .tmux.conf"
+fi
 
 # Source the new bash profile
 echo "Sourcing .bash_profile..."
