@@ -3,6 +3,13 @@ set nocompatible
 filetype plugin indent on
 syntax on
 
+" Easy formatting file
+" Define Format command that preserves cursor position
+command! Format execute "normal! mqgg=G`q"
+
+" Bind to <leader>fr
+nnoremap <leader>fr :Format<CR>
+
 " VSCode-like appearance
 set number
 set relativenumber

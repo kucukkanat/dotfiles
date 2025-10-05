@@ -1,11 +1,7 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/grok-code",
   "provider": {
-    "anthropic": {
-      "options": {
-        "baseURL": "https://api.anthropic.com/v1"
-      }
-    },
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "Ollama (local)",
@@ -20,23 +16,30 @@
     },
     "ch.at": {
       "name": "[FREE] ch.at - OpenAI",
+      "npm": "@ai-sdk/openai-compatible",
+      "api": "openai",
       "options": {
-        "baseURL": "https://ch.at/v1/"
+        "baseURL": "https://ch.at/v1",
+        "apiKey": "null"
       },
       "models": {
         "gpt-5": {
+          "name": "GPT 5"
+        },
+        "gpt-mini": {
           "name": "GPT 5"
         }
       }
     },
     "pollinations": {
       "name": "[FREE] Pollinations",
+      "npm": "@ai-sdk/openai-compatible",
       "options": {
-        "baseURL": "https://text.pollinations.ai/openai"
+        "baseURL": "https://text.pollinations.ai/openai/"
       },
       "models": {
         "openai-large": {
-          "name": "GPT 5 Chat"
+          "name": "openai-large"
         },
         "deepseek": {
           "name": "deepseek"
@@ -44,23 +47,11 @@
         "deepseek-reasoning": {
           "name": "deepseek-reasoning"
         },
-        "gemini": {
-          "name": "gemini"
-        },
-        "gemini-search": {
-          "name": "gemini-search"
-        },
         "mistral": {
           "name": "mistral"
         },
-        "nova-fast": {
-          "name": "nova-fast"
-        },
         "openai": {
           "name": "openai"
-        },
-        "openai-audio": {
-          "name": "openai-audio"
         },
         "openai-fast": {
           "name": "openai-fast"
