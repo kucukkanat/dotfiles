@@ -83,7 +83,7 @@ nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 
 " Plugin configurations
-colorscheme gruvbox
+colorscheme habamax
 set background=dark
 
 " NERDTree
