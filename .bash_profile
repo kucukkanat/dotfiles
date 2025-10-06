@@ -43,7 +43,9 @@ fi
 
 # Check deepseek remaining balance
 deepseek_chk(){
-curl -s -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" https://api.deepseek.com/user/balance | jq -r '"\uf2dc DeepSeek Balance: \(.balance) 🔑"'
+    curl -L -X GET 'https://api.deepseek.com/user/balance' \
+    -H 'Accept: application/json' \
+    -H "Authorization: Bearer ${DEEPSEEK_API_KEY}"
 }
 # Kill all docker containers
 dka() {
