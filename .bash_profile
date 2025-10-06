@@ -41,7 +41,10 @@ if command -v basher &> /dev/null; then
     eval "$(basher init - bash)"
 fi
 
-
+# Check deepseek remaining balance
+deepseek_chk(){
+curl -s -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" https://api.deepseek.com/user/balance | jq -r '"\uf2dc DeepSeek Balance: \(.balance) 🔑"'
+}
 # Kill all docker containers
 dka() {
     docker rm $(docker ps -aq) -f
