@@ -4,13 +4,22 @@ export LANG=C
 
 export PATH=$PATH:$HOME/.bun/bin
 export PATH=$PATH:$HOME/.deno/bin
+export PATH=$PATH:$HOME/.bin
+
 
 # Claude code configutaition
-export ANTHROPIC_BASE_URL=https://api.z.ai/api/anthropic
-export ANTHROPIC_AUTH_TOKEN="YOUR_API_KEY"
-export ANTHROPIC_DEFAULT_HAIKU_MODEL="glm-4.5-air"
-export ANTHROPIC_DEFAULT_SONNET_MODEL="glm-4.6"
+export DEEPSEEK_API_KEY="sk-xxxxxxxxxx"
+export DEEPSEEK_BASE_URL="https://api.deepseek.com/anthropic"
+export DEEPSEEK_MODEL="deepseek-chat"
+export ZAI_BASE_URL="https://api.z.ai/api/anthropic"
+export ZAI_MODEL="glm-4.5"
+export ANTHROPIC_BASE_URL="${DEEPSEEK_BASE_URL}"
+export ANTHROPIC_AUTH_TOKEN="${DEEPSEEK_API_KEY}"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="${DEEPSEEK_MODEL}"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="${DEEPSEEK_MODEL}"
 export ANTHROPIC_DEFAULT_OPUS_MODEL="glm-4.6"
+
+
 # Warn if ANTHROPIC_AUTH_TOKEN is still the placeholder
 if [[ -z "${ANTHROPIC_AUTH_TOKEN}" || "${ANTHROPIC_AUTH_TOKEN}" == "YOUR_API_KEY" ]]; then
     printf "\n\e[1;33m[WARNING] ANTHROPIC_AUTH_TOKEN is using the placeholder value.\e[0m\n"
@@ -20,7 +29,6 @@ if [[ -z "${ANTHROPIC_AUTH_TOKEN}" || "${ANTHROPIC_AUTH_TOKEN}" == "YOUR_API_KEY
 fi
 
 # Cross Platform Utility functions
-source "$HOME/utils.sh"
 
 # Starship prompt setter
 if command -v starship &> /dev/null; then
@@ -53,11 +61,10 @@ if command -v fff &> /dev/null; then
         fff "$@"
         cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
     }
-else
-    echo "fff is not installed. You can install it using basher: basher install dylanaraps/fff"
 fi
 
 # Aliases
+# alias claude="bunx @anthropic-ai/claude-code"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
