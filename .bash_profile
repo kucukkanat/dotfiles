@@ -1,6 +1,6 @@
 # ENV Variables
-export LC_ALL=C
-export LANG=C
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 export PATH=$PATH:$HOME/.bun/bin
 export PATH=$PATH:$HOME/.deno/bin
