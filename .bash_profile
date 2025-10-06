@@ -45,7 +45,8 @@ fi
 deepseek_chk(){
     curl -L -X GET 'https://api.deepseek.com/user/balance' \
     -H 'Accept: application/json' \
-    -H "Authorization: Bearer ${DEEPSEEK_API_KEY}"
+    -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" | jq .balance_infos[0].total_balance
+
 }
 # Kill all docker containers
 dka() {
