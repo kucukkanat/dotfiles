@@ -9,6 +9,8 @@ command! Format execute "normal! mqgg=G`q"
 
 " Bind to <leader>fr
 nnoremap <leader>fr :Format<CR>
+" Escape terminal easily
+tnoremap <Esc> <C-\><C-n>
 
 " VSCode-like appearance
 set number
