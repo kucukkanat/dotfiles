@@ -82,9 +82,8 @@ nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 
-" Plugin configurations
+" Theme configurations
 colorscheme habamax
-set background=dark
 
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>
