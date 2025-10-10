@@ -6,3 +6,4 @@ curl https://raw.githubusercontent.com/kucukkanat/dotfiles/refs/heads/main/conve
 ```
 
 
+Note to self: Use GNU STOW
