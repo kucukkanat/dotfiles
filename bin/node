@@ -1,0 +1,5 @@
+#!/bin/bash
+# wrapper.sh
+
+# This passes arguments AND replaces the shell
+exec bun "$@"
