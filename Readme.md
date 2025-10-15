@@ -1,9 +1,3 @@
 # Installing
-Run to install
-
-```shell
-curl https://raw.githubusercontent.com/kucukkanat/dotfiles/refs/heads/main/convenience.sh | bash
-```
-
-
-Note to self: Use GNU STOW
+1. Install [chezmoi](https://www.chezmoi.io/install/)
+2. Install dotfiles by running `chezmoi init --apply https://github.com/kucukkanat/dotfiles.git`
