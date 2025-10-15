@@ -75,3 +75,5 @@ alias x="exit"
 alias mkdir="mkdir -pv"
 alias cdd="cd ~/Developer"
 alias v="nvim"
+alias cm="chezmoi"
+
