@@ -11,34 +11,21 @@ export PATH=$PATH:$HOME/.bin
 export DEEPSEEK_API_KEY="sk-xxxxxxxxxx"
 export DEEPSEEK_BASE_URL="https://api.deepseek.com/anthropic"
 export DEEPSEEK_MODEL="deepseek-chat"
+
+export ZAI_API_KEY="xxxxxx.xxxxx"
 export ZAI_BASE_URL="https://api.z.ai/api/anthropic"
 export ZAI_MODEL="glm-4.5"
+
 export ANTHROPIC_BASE_URL="${DEEPSEEK_BASE_URL}"
 export ANTHROPIC_AUTH_TOKEN="${DEEPSEEK_API_KEY}"
 export ANTHROPIC_DEFAULT_HAIKU_MODEL="${DEEPSEEK_MODEL}"
 export ANTHROPIC_DEFAULT_SONNET_MODEL="${DEEPSEEK_MODEL}"
-export ANTHROPIC_DEFAULT_OPUS_MODEL="glm-4.6"
+export ANTHROPIC_DEFAULT_OPUS_MODEL="${DEEPSEEK_MODEL}"
 
-
-# Warn if ANTHROPIC_AUTH_TOKEN is still the placeholder
-if [[ -z "${ANTHROPIC_AUTH_TOKEN}" || "${ANTHROPIC_AUTH_TOKEN}" == "YOUR_API_KEY" ]]; then
-    printf "\n\e[1;33m[WARNING] ANTHROPIC_AUTH_TOKEN is using the placeholder value.\e[0m\n"
-    printf "Please update it with your API key:\n"
-    printf "  \e[1;36mhttps://z.ai/manage-apikey/apikey-list\e[0m\n\n"
-    printf "After updating, reload this file: \e[1;32msource ~/.bash_profile\e[0m\n\n"
-fi
-
-# Cross Platform Utility functions
 
 # Starship prompt setter
 if command -v starship &> /dev/null; then
     eval "$(starship init bash)"
-fi
-
-# Basher package manager
-export PATH="$HOME/.basher/bin:$PATH"
-if command -v basher &> /dev/null; then
-    eval "$(basher init - bash)"
 fi
 
 # Check deepseek remaining balance
