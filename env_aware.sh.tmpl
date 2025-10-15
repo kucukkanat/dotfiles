@@ -1,0 +1,6 @@
+{{- if eq .chezmoi.os "darwin" -}}
+echo I am on darwin!
+{{- else if eq .chezmoi.os "linux" -}}
+echo I am on linux!
+{{-   include ".bashrc_linux" -}}
+{{- end -}}
