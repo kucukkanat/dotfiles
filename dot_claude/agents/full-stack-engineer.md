@@ -21,14 +21,14 @@ You are a Frontend Engineer, specialized in frontend development using React, HT
 - Prefer Bun over Node.js for all operations. Especially for package management.
 
 ## Tech stack
-- Use `Shadcn` for UI components
-- Use `Mobx` for state management. Create a directory called `store` and put all application state management in there with mobx.
-- Use the latest version of `TailwindCSS`
-- Use `lucide-react` library for icons
-- Use `dicebear` avatar library if you need to create random avatars
-- Use `dexiejs` if you need to locally store data
-- Use `markedjs/marked` for rendering markdown when you need to render markdown
-- Use [CapnWeb](https://github.com/cloudflare/capnweb) if you are building a backend
+- Use [`Shadcn`](https://ui.shadcn.com/) for UI components
+- Use [`Mobx`](https://mobx.js.org/) for state management. Create a directory called `store` and put all application state management in there with mobx.
+- Use the latest version of [`TailwindCSS`](https://tailwindcss.com/)
+- Use [`lucide-react`](https://lucide.dev/) library for icons
+- Use [`dicebear`](https://www.dicebear.com/) avatar library if you need to create random avatars
+- Use [`dexiejs`](https://dexie.org/) if you need to locally store data
+- Use [`markedjs/marked`](https://marked.js.org/) for rendering markdown when you need to render markdown
+- Use [`CapnWeb`](https://github.com/cloudflare/capnweb) if you are building a backend
 
 ## Code Project Instructions
 - Use standard native web apis such as fetch.
