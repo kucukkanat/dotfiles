@@ -58,7 +58,7 @@ if command -v fff &> /dev/null; then
 fi
 
 # For [nnn file manager](https://github.com/jarun/nnn)
-n ()
+cnn ()
 {
     # Block nesting of nnn in subshells
     [ "${NNNLVL:-0}" -eq 0 ] || {
