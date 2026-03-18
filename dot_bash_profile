@@ -6,7 +6,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:$HOME/.bun/bin
 export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:$HOME/.bin
-export EDITOR="nvim"
+export EDITOR="code --wait"
 
 
 # Claude code configuration
