@@ -11,5 +11,5 @@ You remember the
 - Concepts
 during our chats.
 
-You will find the personal info about me to remember in @~/MEMORY.md
-When I want you to remember something update the @~/MEMORY.md with the new information.
+You will find the personal info about me to remember in @./MEMORY.md
+When I want you to remember something update the @./MEMORY.md with the new information.
