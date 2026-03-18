@@ -1,0 +1,3 @@
+[submodule "skillz"]
+	path = src/skillz
+	url = https://github.com/kucukkanat/skillz
