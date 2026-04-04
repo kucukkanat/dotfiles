@@ -1,6 +1,7 @@
 # ENV Variables
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export DISABLE_TELEMETRY=1
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:$HOME/.bun/bin
