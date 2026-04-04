@@ -1,6 +1,0 @@
-{{- if eq .chezmoi.os "darwin" -}}
-echo I am on darwin!
-{{- else if eq .chezmoi.os "linux" -}}
-echo I am on linux!
-echo I am on linux and my distro is {{ .chezmoi.linux_distro }} and my architecture is {{ .chezmoi.architecture }}!
-{{- end -}}

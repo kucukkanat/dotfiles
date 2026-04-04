@@ -87,36 +87,6 @@ vnoremap <leader>p "+p
 " Theme configurations
 colorscheme habamax
 
-" NERDTree
-nnoremap <leader>n :NERDTreeToggle<CR>
-let g:NERDTreeIgnore = []
-let g:NERDTreeShowHidden = 1
-
-" Airline
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#fnamemod=':t'
-let g:airline_powerline_fonts=1
-
-" FZF (if available)
-if executable('fzf')
-    nnoremap <leader>ff :Files<CR>
-    nnoremap <leader>fg :Rg<CR>
-    nnoremap <leader>fb :Buffers<CR>
-endif
-
-" Auto-pairs
-let g:AutoPairsFlyMode=1
-
-" IndentLine
-let g:indentLine_char='│'
-let g:indentLine_enabled=1
-
-" Floaterm
-nnoremap <leader>tt :FloatermToggle<CR>
-tnoremap <leader>tt <C-\><C-n>:FloatermToggle<CR>
-let g:floaterm_width=0.8
-let g:floaterm_height=0.8
-
 " For Astro file syntax (requires astro-vim - wuelnerdotexe/vim-astro )
 autocmd BufNewFile,BufRead *.astro setfiletype astro
 autocmd FileType astro set syntax=astro
