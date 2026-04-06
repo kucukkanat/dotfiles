@@ -43,7 +43,7 @@ set background=dark
 set mouse=a
 
 " Enable native packages
-set packpath=~/.vim
+set packpath^=~/.vim
 
 " Key mappings (VSCode-like)
 let mapleader = " "
