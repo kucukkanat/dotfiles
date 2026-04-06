@@ -70,7 +70,7 @@ cnn ()
 
 
 # Aliases
-# alias claude="bunx @anthropic-ai/claude-code"
+alias cc="claude --dangerously-skip-permissions"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
