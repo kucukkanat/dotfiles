@@ -9,6 +9,9 @@ export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:$HOME/.bin
 export EDITOR="code --wait"
 
+if command -v fnm &> /dev/null; then
+    eval "$(fnm env --use-on-cd --shell zsh)"
+fi
 
 # Starship prompt setter
 if command -v starship &> /dev/null; then
