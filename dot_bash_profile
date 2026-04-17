@@ -74,6 +74,7 @@ cnn ()
 
 # Aliases
 alias ccode="claude --dangerously-skip-permissions"
+alias ccopilot="copilot --allow-all"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
